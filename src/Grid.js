@@ -19,7 +19,7 @@ const Grid = (props) => {
     useEffect(() => {
         setProgress(30);
         getData();
-    },[]);
+    });
     return (
         <>
           <div className="mt-4 w-screen py-4 overflow-hidden">
