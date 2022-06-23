@@ -5,18 +5,19 @@ import Load from './pages/Load';
 
 const Grid = (props) => {
     const [data,setData] = useState([]);
+    const {setProgress} = props;
     const getData = async () => {
         let newData = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=54d622d860034f938e32eca4d66e2256`);
-        props.setProgress(60);
+        setProgress(60);
         let res = await newData.json();
         setData(res.articles);
-        props.setProgress(70);
+        setProgress(70);
         setTimeout(() => {
-        props.setProgress(100);
+        setProgress(100);
         },2000);
     }
     useEffect(() => {
-        props.setProgress(30);
+        setProgress(30);
         getData();
     },[]);
     return (
