@@ -19,7 +19,7 @@ const Info = (props) => {
     useEffect(() => {
         props.setProgress(30);
         getData()
-    }, []);
+    });
     return (
         <>{<div className="container mx-auto px-4 mt-6">
             <img className="rounded-md bg-gray-500 object-cover object-center" src={data.urlToImage}/>
