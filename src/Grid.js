@@ -19,14 +19,16 @@ const Grid = (props) => {
     useEffect(() => {
         setProgress(30);
         getData();
-    });
+    },[]);
     return (
         <>
           <div className="mt-4 w-screen py-4 overflow-hidden">
             <div className="container mx-auto px-4 myclass">
               {
+                (data.length > 0) ? (data.map((item,index)=> {
                 data.map((item,index)=> {
                     return <Card id={index} date={item.publishedAt} name={item.source.name} url={item.url} title={item.title} img={item.urlToImage} description={item.description}/>
+                })) : <div><Load/><Load/><Load/></div>
                 })
               }
             </div>
