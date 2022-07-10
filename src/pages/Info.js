@@ -6,7 +6,7 @@ const Info = (props) => {
     const [data, setData] = useState([]);
     const { id } = useParams();
     const getData = async () => {
-        let newData = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=54d622d860034f938e32eca4d66e2256`);
+        let newData = await fetch(`http://localhost:3030/`);
         props.setProgress(60);
         let res = await newData.json();
         props.setProgress(70);
@@ -19,7 +19,7 @@ const Info = (props) => {
     useEffect(() => {
         props.setProgress(30);
         getData()
-    });
+    },[]);
     return (
         <>{<div className="container mx-auto px-4 mt-6">
             <img className="rounded-md bg-gray-500 object-cover object-center" src={data.urlToImage}/>
