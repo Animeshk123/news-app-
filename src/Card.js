@@ -5,7 +5,7 @@ import moment from 'moment';
 const Card = (props) => {
     return (
         <NavLink to={`/info/${props.id}`}>
-        <div className="w-full max-w-sm shadow-lg bg-white rounded-md p-3 mb-4">
+        <div className="w-full max-w-sm shadow-lg bg-white rounded-md p-3 mb-4 sm:mx-3">
          <img loading="lazy" className='bg-slate-400 w-full h-44 object-cover object-center rounded-sm' src={props.img} alt="preview"/>
          <h1 className="font-semibold capitalize text-xl py-2">{props.title}</h1>
          <p className='capitalize'>{props.description}</p>
