@@ -7,7 +7,7 @@ const Grid = (props) => {
     const [data,setData] = useState([]);
     const {setProgress} = props;
     const getData = async () => {
-        let newData = await fetch(`http://localhost:3030/`);
+        let newData = await fetch(`https://news-api-backend.vercel.app/`);
         setProgress(60);
         let res = await newData.json();
         setData(res.articles);
