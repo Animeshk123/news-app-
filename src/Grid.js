@@ -7,7 +7,7 @@ const Grid = (props) => {
     const [data,setData] = useState([]);
     const {setProgress} = props;
     const getData = async () => {
-        let newData = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=54d622d860034f938e32eca4d66e2256`);
+        let newData = await fetch(`http://localhost:3030/`);
         setProgress(60);
         let res = await newData.json();
         setData(res.articles);
