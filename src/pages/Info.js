@@ -6,7 +6,7 @@ const Info = (props) => {
     const [data, setData] = useState([]);
     const { id } = useParams();
     const getData = async () => {
-        let newData = await fetch(`http://localhost:3030/`);
+        let newData = await fetch(`https://news-api-backend.vercel.app/`);
         props.setProgress(60);
         let res = await newData.json();
         props.setProgress(70);
