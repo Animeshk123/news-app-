@@ -27,7 +27,7 @@ const Grid = (props) => {
               {
                 (data.length > 0) ? (data.map((item,index)=> {
                     return <Card id={index} date={item.publishedAt} name={item.source.name} url={item.url} title={item.title} img={item.urlToImage} description={item.description}/>
-                })) : <div><Load/><Load/><Load/><Load/><Load/><Load/><Load/><Load/></div>
+                })) : <div className='w-full h-auto flex flex-wrap justify-center'><Load/><Load/><Load/><Load/><Load/><Load/><Load/><Load/></div>
               }
             </div>
           </div>
